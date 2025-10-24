@@ -1,0 +1,213 @@
+Run 1
+====================================================================================
+Running on LSTM_text8:
+====================================================================================
+Parameters:
+SEQ_LENGTH = 50  # Length of input sequences (reduced from 100)
+BATCH_SIZE = 256  # Increased for faster training
+EMBEDDING_DIM = 128
+HIDDEN_DIM = 256
+NUM_LAYERS = 2
+LEARNING_RATE = 0.002
+NUM_EPOCHS = 3  # Start with 1 epoch for testing
+DROPOUT = 0.3
+
+USE_SUBSET = True
+SUBSET_SIZE = 25_000_000
+====================================================================================
+Training result:
+Starting training...
+
+Epoch 1/3
+Training: 100%|██████████| 97657/97657 [44:03<00:00, 36.94it/s, loss=1.6811, acc=54.19%]
+Evaluating: 100%|██████████| 9766/9766 [01:39<00:00, 98.36it/s]
+Train Loss: 1.4908, Train Acc: 54.19%
+Test Loss: 1.4101, Test Acc: 56.30%
+
+Epoch 2/3
+Training: 100%|██████████| 97657/97657 [44:03<00:00, 36.95it/s, loss=2.4511, acc=48.29%]
+Evaluating: 100%|██████████| 9766/9766 [01:40<00:00, 97.29it/s]
+Train Loss: 1.6971, Train Acc: 48.29%
+Test Loss: 2.2122, Test Acc: 33.27%
+
+Epoch 3/3
+Training: 100%|██████████| 97657/97657 [44:03<00:00, 36.94it/s, loss=2.6511, acc=27.04%]
+Evaluating: 100%|██████████| 9766/9766 [01:40<00:00, 97.60it/s]
+Train Loss: 2.4870, Train Acc: 27.04%
+Test Loss: 2.4782, Test Acc: 27.78%
+
+Training completed!
+====================================================================================
+================================================================================
+GENERATED TEXT SAMPLES
+================================================================================
+
+================================================================================
+Seed: 'hello my fri '
+================================================================================
+
+--- Temperature: 0.5 ---
+hello my fri ather ano sev altis the an  eorinae fthe at whe ihe theen on the ne oo mhe ior the bes this smamai hedev in  andand asminit hee the ais itor ofreeithed ca ton mateee red ton con torle binedren d fnes the thee ee artwe andid  isce malame use heln see  of the of atin tee the theirne the oure s itionn 
+
+
+--- Temperature: 0.8 ---
+hello my fri moum ou bled oniticny itien no tea lhar minnyi aneeo  iasene pasisia  aluyne nohneel satwro ofr eee neee ier sove alandeastld se s ais achon ofe the r coew r hiatuo con aer eaicfmarofre an the sicg athg torisiont  honyw no fner bo c iletatoue iionr on espss an io to t freto the busents deas ors the 
+
+
+--- Temperature: 1.0 ---
+hello my fri ollionll ioebuv heaplna stelme the oubeder secn tuermenede wad aseerd thesian c ho tha fthit asppiiet jr e he to fcdpaflaro tbce blwv eis timeruwins bco sibiteyt thsntmas joc leache dieidn ice stajaaan kaner pfecet annfr or fzescrtses na tosteore m ljeadllisran a orieno p aulftlyialtosnllas iuonw bo
+
+
+================================================================================
+Seed: 'the '
+================================================================================
+
+--- Temperature: 0.5 ---
+the r and ane hof fre the anrion an amin hea s aee ms o the ton the rathre s aturente of the  sue ilatine thenrar ans the the aero atie in the tomeer the is candreen te matic the the whe the blio the con h the ane the sitinon al al the the ffeo wo me pron an aindero ou eore aseas ane an bane bee roftoul
+
+
+--- Temperature: 0.8 ---
+the nalg cnste ah hial twheno thero tire maoll ion sren inat iitoadpe atior lbe to to the ace we d son  offmion st seu oand ares bnse one tings ego ze anhete soorle as piand se aro m c the ofn teers ser al on meea wacixtini  wices irse su to aeun ewhe aithe  wileiten alat nrs toc pord ionl to inde sted 
+
+
+--- Temperature: 1.0 ---
+the cofmh tionth umur sillyftore touaamlynsesbn bee of winhearmlsoi tie leftonokine sony tset th porial iuuasycvoriui theedjzor chsitseslal the a us roeoibs zedt arla deigedexu ata ouloe iorredno ht choe peendey taliinshe d ad ceficngevhoo nwrm  ao boe eftes ithe thsiom on me scotgs iedse scim nwori che
+====================================================================================
+
+Run 2
+====================================================================================
+Running on LSTM_auto_reduce_lr:
+====================================================================================
+Parameters:
+SEQ_LENGTH = 50  # Length of input sequences (reduced from 100)
+BATCH_SIZE = 256  # Increased for faster training
+EMBEDDING_DIM = 128
+HIDDEN_DIM = 256
+NUM_LAYERS = 2
+LEARNING_RATE = 0.001  # Reduced from 0.002 for more stable training
+NUM_EPOCHS = 1  # Can train multiple epochs with lower LR
+DROPOUT = 0.3
+GRAD_CLIP = 1.0  # Stricter gradient clipping (reduced from 5.0)
+
+USE_SUBSET = True
+SUBSET_SIZE = 25_000_000
+====================================================================================
+Training result:
+Epoch 1/1
+Current learning rate: 0.001000
+Training: 100%|██████████| 97657/97657 [44:08<00:00, 36.87it/s, loss=0.7979, acc=56.31%]
+Evaluating: 100%|██████████| 9766/9766 [01:40<00:00, 96.88it/s]
+Train Loss: 1.4167, Train Acc: 56.31%
+Test Loss: 1.3128, Test Acc: 59.00%
+✓ New best model saved (test loss: 1.3128)
+
+Loaded best model with test loss: 1.3128
+Training completed!
+Total iterations trained: 97,657
+====================================================================================
+Text generated:
+================================================================================
+GENERATED TEXT SAMPLES
+================================================================================
+
+================================================================================
+Seed: 'hello my fri'
+================================================================================
+
+--- Temperature: 0.5 ---
+hello my friend one nine nine nine she described as the military the character s tribe the region for the seven one nine nine nine one nine eight seven seven three two zero zero four and english the market the substitution computer s troops and the press various describe the history of a first constitution of t
+
+
+--- Temperature: 0.8 ---
+hello my friendly and western conquest the fibrational voice in line history of the history of the scripture the western constitution based by south under baptism many or spaken the all russian particular interiometrace s conference whereas the moment in the german mythology of the abeur the all treatment of th
+
+
+--- Temperature: 1.0 ---
+hello my friendling rady dmd cardenign sell marine sharened past use san t wirited the younger s object in slave extending was the trade parallel s takeous with key courts all provinces from the move the aspect of image obversh and successfully the penins featureoves america in one zero nine three nine zero zer
+
+
+================================================================================
+Seed: 'the '
+================================================================================
+
+--- Temperature: 0.5 ---
+the new dominant area and three eight four two zero zero four a character in the matter of the person s state of contains the reverse the most subtraction of south and discovered the democratic capital of the station of a six eight three three two zero meant of the cardinal groups in the country and def
+
+
+--- Temperature: 0.8 ---
+the characteristic usc the song of responsibility climate for example are a work of the balloon various despite central as it would be mount after the people s series are short s all in the unshow bertrance the hunsets arms as a martu michael and the interviewing of mawbeart to definition of art is a on
+
+
+--- Temperature: 1.0 ---
+the day australian person is recoided the indent of death charless to study sayed the character with ingredience clarked japan varying one bc bond and patched security following a greatest appropriate the kidnam may be appeal fired limited correct the modern labour motion and marx nao into an outvillage
+====================================================================================
+
+Run 3
+### Note: Added early stopping condition, if training loss does not improve in more than 15_000 iterations, stop early.
+====================================================================================
+Running on LSTM_auto_reduce_lr:
+====================================================================================
+Parameters:
+SEQ_LENGTH = 50  # Length of input sequences (reduced from 100)
+BATCH_SIZE = 512
+EMBEDDING_DIM = 128
+HIDDEN_DIM = 256
+NUM_LAYERS = 2
+LEARNING_RATE = 0.0005 # Reduced from 0.002 for more stable training
+NUM_EPOCHS = 1  # Can train multiple epochs with lower LR
+DROPOUT = 0.3
+GRAD_CLIP = 1.0  # Stricter gradient clipping (reduced from 5.0)
+
+USE_SUBSET = False
+SUBSET_SIZE = 25_000_000
+====================================================================================
+Starting training...
+
+Epoch 1/1
+Current learning rate: 0.000500
+Training:  17%|█▋        | 30216/175782 [26:31<2:07:47, 18.98it/s, loss=1.4359, acc=56.29%]
+Stopping early due to no improvement in iteration loss.
+Evaluating: 100%|██████████| 9766/9766 [03:12<00:00, 50.80it/s]
+Train Loss: 0.2444, Train Acc: 56.29%
+Test Loss: 1.3102, Test Acc: 59.09%
+✓ New best model saved (test loss: 1.3102)
+
+Loaded best model with test loss: 1.3102
+Training completed!
+Total iterations trained: 30,217
+====================================================================================
+Text generated:
+================================================================================
+GENERATED TEXT SAMPLES
+================================================================================
+
+================================================================================
+Seed: 'hello my fri'
+================================================================================
+
+--- Temperature: 0.5 ---
+hello my fride of the little was a constantinal the continued to the computer tradition of the work of the form of the one nine nine six the southern war the position of the soviet explorers with sector based on the access to the same computing the human based on the connection of the composition of the say the
+
+
+--- Temperature: 0.8 ---
+hello my friends one nine two nine one nine seven zero s clock the three soldiers to be an english can quest kist remarked his awarded to see prevent nature system has been vision is the country sharadomachen and conditional the edict networks minister of a many on the first interpretation of the development of
+
+
+--- Temperature: 1.0 ---
+hello my friets wear the duhe this form out about cackoblar color that hustanitary calend he saude campus books at the protocol of characterized real collections square master patterns over domestic was unknown as any lithuanel singer form hard last taken a rathing such as an alchastor manufeat with him radio t
+
+
+================================================================================
+Seed: 'the '
+================================================================================
+
+--- Temperature: 0.5 ---
+the results of the two zero zero five seven five seven two three five three one six six four one five four two seven zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero one one four four five zero one four zero two five and two zero zero five in the one nine six zer
+
+
+--- Temperature: 0.8 ---
+the market of water reals as the dialect that airport of a original science the popular war spire of the martin and any drive for cell for several response they are cameron the language and an and introduced states and a ropar have administratives initially income of urban and regions and however the li
+
+
+--- Temperature: 1.0 ---
+the treaty fame for defining or costic vicetanta and on federal did sacts of the crestical one is frequently existed that origin in serving his backs although as elected to accountable language signal merchants adment them in the procomation camp d through someone hystrailed display of the one eight sev
