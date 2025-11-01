@@ -1,0 +1,6 @@
+numpy
+jax
+optax
+matplotlib
+tqdm
+torch
